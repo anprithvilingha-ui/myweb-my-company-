@@ -1,0 +1,916 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5ef">
+  <title>Sri Baba Dry Cleaners | Clothes, cared for</title>
+  <meta name="description" content="Thoughtful dry cleaning, laundry, and garment care from Sri Baba Dry Cleaners.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #f6f5ef;
+      --ink: #1d2922;
+      --green: #24543f;
+      --green-dark: #193d2d;
+      --lime: #d3e56c;
+      --coral: #e88769;
+      --muted: #70766f;
+      --line: #dedfd6;
+      --white: #fffefa;
+      --serif: Georgia, "Times New Roman", serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background-color: var(--paper);
+      background-image: repeating-linear-gradient(
+        135deg,
+        transparent 0,
+        transparent 39px,
+        rgba(29, 41, 34, .025) 40px,
+        transparent 41px
+      );
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, select { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .wrap {
+      width: min(1160px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .topline {
+      padding: 10px 24px;
+      color: var(--white);
+      background: var(--green-dark);
+      text-align: center;
+      font-size: 12px;
+      letter-spacing: .04em;
+    }
+
+    header {
+      position: sticky;
+      z-index: 10;
+      top: 0;
+      border-bottom: 1px solid rgba(29, 41, 34, .1);
+      background: rgba(246, 245, 239, .94);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      display: flex;
+      min-height: 76px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-family: "Manrope", sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .brand-mark {
+      display: grid;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--green-dark);
+      background: var(--lime);
+      font-family: var(--serif);
+      font-size: 22px;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .nav-links a:not(.nav-cta):hover { color: var(--green); }
+
+    .nav-cta, .button {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 20px;
+      border: 0;
+      border-radius: 4px;
+      color: var(--white);
+      background: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      transition: background .2s, transform .2s;
+      cursor: pointer;
+    }
+
+    .nav-cta:hover, .button:hover {
+      transform: translateY(-2px);
+      background: var(--green-dark);
+    }
+
+    .menu-button {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      color: var(--ink);
+      background: transparent;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .hero {
+      display: grid;
+      min-height: 590px;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 54px;
+      padding-top: 48px;
+      padding-bottom: 58px;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 28px;
+      height: 2px;
+      background: var(--coral);
+      content: "";
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 590px;
+      margin: 20px 0;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(48px, 6vw, 76px);
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: .99;
+    }
+
+    h1 em {
+      color: var(--green);
+      font-family: var(--serif);
+      font-weight: 400;
+    }
+
+    .hero-copy {
+      max-width: 440px;
+      margin-bottom: 27px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .text-link span { transition: transform .2s; }
+    .text-link:hover span { transform: translateX(4px); }
+
+    .hero-photo {
+      position: relative;
+      min-height: 460px;
+    }
+
+    .hero-photo img {
+      position: absolute;
+      inset: 0 18px 22px 0;
+      width: calc(100% - 18px);
+      height: calc(100% - 22px);
+      border-radius: 3px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .photo-note {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 205px;
+      padding: 18px 19px;
+      border: 5px solid var(--paper);
+      color: var(--white);
+      background: var(--green);
+    }
+
+    .photo-note strong {
+      display: block;
+      margin-bottom: 5px;
+      font-family: "Manrope", sans-serif;
+      font-size: 15px;
+    }
+
+    .photo-note span {
+      color: rgba(255,255,255,.75);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .ticker {
+      overflow: hidden;
+      padding: 15px 0;
+      color: var(--green-dark);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .ticker span { padding: 0 17px; }
+    .ticker b { color: var(--coral); }
+
+    section { padding: 94px 0; }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 32px;
+      margin-bottom: 37px;
+    }
+
+    .section-heading h2 {
+      max-width: 520px;
+      margin: 13px 0 0;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(34px, 4vw, 48px);
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.08;
+    }
+
+    .section-heading > p {
+      max-width: 340px;
+      margin-bottom: 3px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .service {
+      min-height: 218px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      transition: border-color .2s, transform .2s;
+    }
+
+    .service:hover {
+      transform: translateY(-4px);
+      border-color: var(--green);
+    }
+
+    .service-number {
+      display: inline-grid;
+      width: 35px;
+      height: 35px;
+      margin-bottom: 30px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--green-dark);
+      background: #e9eddc;
+      font-family: var(--serif);
+      font-size: 16px;
+    }
+
+    .service h3 {
+      margin-bottom: 8px;
+      font-family: "Manrope", sans-serif;
+      font-size: 18px;
+    }
+
+    .service p {
+      max-width: 285px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .care {
+      color: var(--white);
+      background: var(--green-dark);
+    }
+
+    .care-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .care h2 {
+      margin: 14px 0 18px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(36px, 4vw, 51px);
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.07;
+    }
+
+    .care-copy {
+      max-width: 430px;
+      color: rgba(255,255,255,.72);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .care .eyebrow { color: var(--lime); }
+
+    .care-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 30px;
+    }
+
+    .care-item {
+      display: flex;
+      gap: 13px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255,255,255,.17);
+    }
+
+    .check {
+      flex: 0 0 25px;
+      display: grid;
+      width: 25px;
+      height: 25px;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--green-dark);
+      background: var(--lime);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .care-item strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+    }
+
+    .care-item span:last-child {
+      color: rgba(255,255,255,.66);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .request-layout {
+      display: grid;
+      grid-template-columns: 1fr .85fr;
+      align-items: start;
+      gap: 75px;
+    }
+
+    .request-layout h2 {
+      margin: 13px 0 15px;
+      font-family: "Manrope", sans-serif;
+      font-size: clamp(36px, 4vw, 50px);
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.08;
+    }
+
+    .request-layout > div > p {
+      max-width: 410px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 13px;
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      min-height: 44px;
+      padding: 0 12px;
+      border: 1px solid var(--line);
+      border-radius: 2px;
+      outline: none;
+      color: var(--ink);
+      background: var(--white);
+      font-size: 13px;
+    }
+
+    textarea {
+      min-height: 88px;
+      padding-top: 12px;
+      resize: vertical;
+    }
+
+    input:focus, select:focus, textarea:focus { border-color: var(--green); }
+
+    form .button {
+      width: 100%;
+      grid-column: 1 / -1;
+    }
+
+    .form-note, .form-status {
+      grid-column: 1 / -1;
+      margin: 0;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .form-status {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .message-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column: 1 / -1;
+      gap: 10px;
+    }
+
+    .message-actions[hidden] { display: none; }
+
+    .message-actions .button { width: 100%; }
+
+    .button-secondary {
+      border: 1px solid var(--green);
+      color: var(--green);
+      background: transparent;
+    }
+
+    .button-secondary:hover {
+      color: var(--white);
+      background: var(--green-dark);
+    }
+
+    footer {
+      padding: 26px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-row strong { color: var(--ink); }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 34px, 560px); }
+      .nav { min-height: 66px; }
+      .menu-button { display: block; }
+
+      .nav-links {
+        position: absolute;
+        top: 66px;
+        right: 0;
+        left: 0;
+        display: none;
+        align-items: stretch;
+        padding: 12px 20px 20px;
+        border-bottom: 1px solid var(--line);
+        background: var(--paper);
+      }
+
+      .nav-links.open { display: flex; flex-direction: column; gap: 0; }
+      .nav-links > a:not(.nav-cta) { padding: 13px 4px; }
+      .nav-cta { margin-top: 8px; }
+      .hero { min-height: auto; grid-template-columns: 1fr; gap: 30px; padding-top: 54px; }
+      h1 { font-size: clamp(48px, 14vw, 68px); }
+      .hero-photo { min-height: 370px; }
+      .hero-photo img { inset: 0 12px 18px 0; width: calc(100% - 12px); height: calc(100% - 18px); }
+      section { padding: 70px 0; }
+      .section-heading { align-items: start; flex-direction: column; gap: 13px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .service { min-height: 205px; padding: 20px; }
+      .care-layout, .request-layout { grid-template-columns: 1fr; gap: 35px; }
+      .care-list { gap: 0 18px; }
+    }
+
+    @media (max-width: 460px) {
+      .topline { font-size: 10px; }
+      .brand { font-size: 15px; }
+      .services-grid, .care-list { grid-template-columns: 1fr; }
+      .service { min-height: auto; }
+      .service-number { margin-bottom: 20px; }
+      form { grid-template-columns: 1fr; padding: 20px; }
+      .field.full, form .button, .form-note, .form-status, .message-actions { grid-column: 1; }
+      .message-actions { grid-template-columns: 1fr; }
+      .footer-row { align-items: start; flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topline">A little more care for the clothes you love</div>
+
+  <header>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Sri Baba Dry Cleaners home">
+        <span class="brand-mark">S</span>
+        <span>Sri Baba<small>Dry Cleaners</small></span>
+      </a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#care">Our approach</a>
+        <a href="#request">Pickup request</a>
+        <a class="nav-cta" href="#request">Request a pickup <span aria-hidden="true">→</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div>
+        <div class="eyebrow">Good care, right here</div>
+        <h1>Clothes, cared for. <em>Life, simplified.</em></h1>
+        <p class="hero-copy">
+          From your everyday favourites to the pieces you save for special days,
+          Sri Baba Dry Cleaners brings a thoughtful touch to garment care.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#request">Request a pickup <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#services">Explore our services <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img
+          src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1100&q=85"
+          alt="Carefully arranged garments ready to wear"
+        >
+        <div class="photo-note">
+          <strong>Fresh, neat, ready.</strong>
+          <span>Every garment gets the attention it deserves.</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Dry cleaning, laundry, pressing, and garment care">
+      <span>Dry cleaning</span><b>✳</b><span>Everyday laundry</span><b>✳</b>
+      <span>Careful pressing</span><b>✳</b><span>Special garments</span>
+    </div>
+
+    <section class="wrap" id="services">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">What we do</div>
+          <h2>Care for the pieces that make your day.</h2>
+        </div>
+        <p>Reliable garment care for busy weeks, special occasions, and everything in between.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service">
+          <span class="service-number">01</span>
+          <h3>Dry cleaning</h3>
+          <p>Considered cleaning for garments that need a little extra attention.</p>
+        </article>
+        <article class="service">
+          <span class="service-number">02</span>
+          <h3>Wash &amp; fold</h3>
+          <p>Everyday laundry, freshened up and neatly folded for an easier week.</p>
+        </article>
+        <article class="service">
+          <span class="service-number">03</span>
+          <h3>Steam pressing</h3>
+          <p>A crisp finish to help your clothes look ready for wherever you’re headed.</p>
+        </article>
+        <article class="service">
+          <span class="service-number">04</span>
+          <h3>Occasion wear</h3>
+          <p>Extra care for the outfits you bring out for your most memorable days.</p>
+        </article>
+        <article class="service">
+          <span class="service-number">05</span>
+          <h3>Delicate fabrics</h3>
+          <p>Gentle handling for pieces that call for a more thoughtful approach.</p>
+        </article>
+        <article class="service">
+          <span class="service-number">06</span>
+          <h3>Household linens</h3>
+          <p>Fresh, tidy linens to make your home feel that little bit more inviting.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="care" id="care">
+      <div class="care-layout wrap">
+        <div>
+          <div class="eyebrow">The Sri Baba difference</div>
+          <h2>Good service is in the little details.</h2>
+          <p class="care-copy">
+            Garment care is personal. We treat your clothes with care, take note
+            of what matters, and aim to make the whole experience feel easy.
+          </p>
+        </div>
+
+        <div class="care-list">
+          <div class="care-item">
+            <span class="check" aria-hidden="true">✓</span>
+            <span><strong>Careful handling</strong><span>Attention to the fabric and finish of each piece.</span></span>
+          </div>
+          <div class="care-item">
+            <span class="check" aria-hidden="true">✓</span>
+            <span><strong>Everyday convenience</strong><span>Simple requests for your regular laundry needs.</span></span>
+          </div>
+          <div class="care-item">
+            <span class="check" aria-hidden="true">✓</span>
+            <span><strong>Occasion-ready finish</strong><span>Thoughtful care for the clothes you look forward to wearing.</span></span>
+          </div>
+          <div class="care-item">
+            <span class="check" aria-hidden="true">✓</span>
+            <span><strong>A friendly local touch</strong><span>Personal service from a neighbourhood cleaner.</span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap" id="request">
+      <div class="request-layout">
+        <div>
+          <div class="eyebrow">Make it a little easier</div>
+          <h2>Start with a pickup request.</h2>
+          <p>
+            Tell us what you need cleaned and when, then choose email or SMS to
+            send your request directly to Sri Baba Dry Cleaners.
+          </p>
+        </div>
+
+        <form id="requestForm">
+          <div class="field">
+            <label for="customerName">Your name</label>
+            <input id="customerName" name="customerName" type="text" autocomplete="name" maxlength="100" required>
+          </div>
+          <div class="field">
+            <label for="customerPhone">Your mobile number</label>
+            <input id="customerPhone" name="customerPhone" type="tel" autocomplete="tel" maxlength="30" required>
+          </div>
+          <div class="field">
+            <label for="service">Service</label>
+            <select id="service" name="service" required>
+              <option value="">Choose a service</option>
+              <option>Dry cleaning</option>
+              <option>Wash &amp; fold</option>
+              <option>Steam pressing</option>
+              <option>Occasion wear</option>
+              <option>Household linens</option>
+              <option>Other garment care</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="pickupDate">Preferred date</label>
+            <input id="pickupDate" name="pickupDate" type="date" required>
+          </div>
+          <div class="field">
+            <label for="items">Number of items</label>
+            <input id="items" name="items" type="number" min="1" max="99" placeholder="For example, 3" required>
+          </div>
+          <div class="field full">
+            <label for="pickupAddress">Pickup address</label>
+            <textarea id="pickupAddress" name="pickupAddress" autocomplete="street-address" maxlength="300" required></textarea>
+          </div>
+          <div class="field full">
+            <label for="locationButton">Current location <span>(optional)</span></label>
+            <button class="button button-secondary" id="locationButton" type="button" aria-pressed="false">Share my current location <span aria-hidden="true">⌖</span></button>
+            <p class="form-note" id="locationStatus" role="status" aria-live="polite">Your location is only included if you tap this button and allow access. It is not saved by this page.</p>
+          </div>
+          <div class="field full">
+            <label for="notes">Notes <span>(optional)</span></label>
+            <textarea id="notes" name="notes" maxlength="500" placeholder="Garment details or pickup instructions"></textarea>
+          </div>
+          <button class="button" type="submit">Prepare order message <span aria-hidden="true">→</span></button>
+          <p class="form-note">Choose email or SMS below, then send the prepared message in your app to place the request.</p>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          <div class="message-actions" id="messageActions" hidden>
+            <a class="button" id="emailAction" href="#">Send by email <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" id="smsAction" href="#">Send by SMS <span aria-hidden="true">↗</span></a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-row wrap">
+      <a class="brand" href="#home">
+        <span class="brand-mark">S</span>
+        <span>Sri Baba<small>Dry Cleaners</small></span>
+      </a>
+      <span>Thoughtful care for the clothes you love.</span>
+      <span>© <span id="year"></span> Sri Baba Dry Cleaners</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector("#menuButton");
+    const navLinks = document.querySelector("#navLinks");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+      menuButton.textContent = isOpen ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Open menu");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+
+    const dateInput = document.querySelector("#pickupDate");
+    dateInput.min = new Date().toISOString().slice(0, 10);
+
+    const requestForm = document.querySelector("#requestForm");
+    const messageActions = document.querySelector("#messageActions");
+    const formStatus = document.querySelector("#formStatus");
+    const locationButton = document.querySelector("#locationButton");
+    const locationStatus = document.querySelector("#locationStatus");
+    let sharedLocation = null;
+
+    locationButton.addEventListener("click", () => {
+      messageActions.hidden = true;
+      formStatus.textContent = "";
+
+      if (sharedLocation) {
+        sharedLocation = null;
+        locationButton.textContent = "Share my current location ⌖";
+        locationButton.setAttribute("aria-pressed", "false");
+        locationStatus.textContent = "Location removed. It will not be included in your message.";
+        return;
+      }
+
+      if (!navigator.geolocation) {
+        locationStatus.textContent = "Location sharing is not available in this browser.";
+        return;
+      }
+
+      locationButton.disabled = true;
+      locationStatus.textContent = "Waiting for your browser's location permission...";
+      navigator.geolocation.getCurrentPosition(
+        ({ coords }) => {
+          sharedLocation = {
+            latitude: coords.latitude,
+            longitude: coords.longitude
+          };
+          locationButton.disabled = false;
+          locationButton.textContent = "Remove shared location";
+          locationButton.setAttribute("aria-pressed", "true");
+          messageActions.hidden = true;
+          formStatus.textContent = "";
+          locationStatus.textContent = "Location will be included in your email or SMS draft. Tap to remove it.";
+        },
+        (error) => {
+          locationButton.disabled = false;
+          locationStatus.textContent = error.code === error.PERMISSION_DENIED
+            ? "Location permission was not granted. You can still submit your pickup address."
+            : "We could not get your location. You can still submit your pickup address.";
+        },
+        { enableHighAccuracy: false, maximumAge: 60000, timeout: 10000 }
+      );
+    });
+
+    requestForm.addEventListener("input", () => {
+      messageActions.hidden = true;
+      formStatus.textContent = "";
+    });
+
+    requestForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(requestForm);
+      const notes = formData.get("notes").trim();
+      const messageBody = [
+        "Pickup request - Sri Baba Dry Cleaners",
+        "",
+        `Name: ${formData.get("customerName").trim()}`,
+        `Mobile: ${formData.get("customerPhone").trim()}`,
+        `Service: ${formData.get("service")}`,
+        `Preferred date: ${formData.get("pickupDate")}`,
+        `Number of items: ${formData.get("items")}`,
+        `Pickup address: ${formData.get("pickupAddress").trim()}`,
+        ...(sharedLocation ? [`Current location: https://maps.google.com/?q=${sharedLocation.latitude},${sharedLocation.longitude}`] : []),
+        `Notes: ${notes || "None"}`
+      ].join("\n");
+
+      try {
+        const subject = encodeURIComponent("Pickup request - Sri Baba Dry Cleaners");
+        const body = encodeURIComponent(messageBody);
+        document.querySelector("#emailAction").href =
+          `mailto:managaraj@gmail.com?subject=${subject}&body=${body}`;
+        document.querySelector("#smsAction").href =
+          `sms:7373063730?body=${body}`;
+        messageActions.hidden = false;
+        formStatus.textContent = "Your message is ready. Choose email or SMS, then send it from your app.";
+      } catch {
+        messageActions.hidden = true;
+        formStatus.textContent = "We could not prepare your message. Please contact the shop directly.";
+      }
+    });
+  </script>
+</body>
+</html>
